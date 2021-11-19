@@ -1,0 +1,25 @@
+{
+  "name": "@ray/utils",
+  "version": "0.0.1",
+  "main": "",
+  "repository": "https://github.com/SuperRay3/utils",
+  "author": "SuperRay3<https://github.com/SuperRay3>",
+  "license": "MIT",
+	"scripts": {
+		"lint-staged": "lint-staged"
+  },
+	"lint-staged": {
+    "src/**/*.{js,ts,tsx,vue}": [
+    ]
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^7.0.0",
+    "lint-staged": "^12.0.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
