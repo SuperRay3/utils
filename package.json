@@ -2,7 +2,10 @@
   "name": "@ray/utils",
   "version": "0.0.1",
   "main": "",
-  "repository": "https://github.com/SuperRay3/utils",
+  "repository": {
+		"type": "git",
+		"url": "git+https://github.com/SuperRay3/utils.git"
+	},
   "author": "SuperRay3<https://github.com/SuperRay3>",
   "license": "MIT",
 	"scripts": {
