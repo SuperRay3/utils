@@ -15,7 +15,11 @@
     "src/**/*.{js,ts,tsx,vue}": []
   },
   "devDependencies": {
+    "@types/node": "^16.11.8",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
     "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.2.0",
     "husky": "^7.0.0",
     "lint-staged": "^12.0.3",
     "rimraf": "^3.0.2",
