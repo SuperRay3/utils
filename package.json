@@ -13,6 +13,7 @@
   "author": "SuperRay3 <https://github.com/SuperRay3>",
   "license": "MIT",
   "scripts": {
+    "dev": "tsc -p tsconfig.esm.json --watch",
     "build": "npm run clean && npm run build:main && npm run build:esm && npm run build:umd",
     "build:main": "tsc -p tsconfig.json",
     "build:esm": "tsc -p tsconfig.esm.json",
@@ -46,6 +47,7 @@
     "rimraf": "^3.0.2",
     "rollup": "^2.60.0",
     "rollup-plugin-local-resolve": "^1.0.7",
+    "rollup-plugin-uglify": "^6.0.4",
     "ts-jest": "^27.0.7",
     "typescript": "^4.5.2",
     "version-bump-prompt": "^6.1.0"
