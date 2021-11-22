@@ -1,7 +1,9 @@
 {
   "name": "@ray/utils",
   "version": "0.0.1",
-  "main": "",
+  "main": "dist/main/index.js",
+	"typings": "dist/main/index.d.ts",
+  "module": "dist/module/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SuperRay3/utils.git"
