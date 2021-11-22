@@ -1,9 +1,9 @@
 {
   "name": "@rayuse/utils",
-  "version": "0.0.3-beta.1",
+  "version": "0.0.3-beta.2",
   "main": "dist/main/index.js",
   "typings": "dist/main/index.d.ts",
-	"module": "dist/esm/index.js",
+  "module": "dist/esm/index.js",
   "unpkg": "dist/umd/index.js",
   "browser": "dist/umd/index.js",
   "repository": {
@@ -16,7 +16,7 @@
     "build": "npm run clean && npm run build:main && npm run build:esm && npm run build:umd",
     "build:main": "tsc -p tsconfig.json",
     "build:esm": "tsc -p tsconfig.esm.json",
-		"build:umd": "rollup -c rollup.config.js",
+    "build:umd": "rollup -c rollup.config.js",
     "release": "bump --commit --tag && npm run build && npm run lint && npm publish --access public",
     "test": "jest",
     "lint-staged": "lint-staged",
