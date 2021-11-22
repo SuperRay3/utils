@@ -1,5 +1,5 @@
 {
-  "name": "@ray/utils",
+  "name": "@rayuse/utils",
   "version": "0.0.1",
   "main": "dist/main/index.js",
   "typings": "dist/main/index.d.ts",
