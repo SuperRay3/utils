@@ -1,7 +1,7 @@
 import { fixedRound, arithmeticSequence, parseTime, getVal, sleep } from './index'
 
 test('parseTime', () => {
-	expect(parseTime(new Date(2021, 11, 19), '{y}/{m}/{d}')).toBe('2021/11/19')
+	expect(parseTime(new Date(2021, 10, 19), '{y}/{m}/{d}')).toBe('2021/11/19')
 })
 
 test('fixedRound', () => {
@@ -13,7 +13,7 @@ test('getVal', () => {
 	expect(getVal(() => a.c, false)).toEqual(false)
 })
 
-it('sleep', async () => {
+it('should sleep', async () => {
 	expect.assertions(1)
 	const rst = await sleep(2000)
 	expect(rst).toBeUndefined()

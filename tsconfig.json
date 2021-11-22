@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "lib": [
+      "esnext",
+      "dom",
+    ],
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "strict": true,
+    "declaration": true,
+    "outDir": "dist/main",
+    "rootDir": "src",
+    // "jsx": "preserve",
+    "types": [
+      "@types/node",
+      "@types/jest"
+    ]
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/**/*.test.ts",
+    "**/**/*.md",
+  ]
+}
