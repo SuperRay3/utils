@@ -47,7 +47,7 @@ export function parseTime(time: Date | string | number, pattern: string): string
  * @param m 保留的位数
  */
 
- export const fixedRound = (number: number, m = 2): string => {
+export const fixedRound = (number: number, m = 2): string => {
   const result = Math.round(Math.pow(10, m) * number) / Math.pow(10, m)
   let resultStr = String(result)
 

@@ -3,13 +3,12 @@ module.exports = {
   env: {
     browser: true,
     node: true,
+		jest: true,
   },
   parser: '@typescript-eslint/parser',
   plugins: [
     '@typescript-eslint',
+		'jest'
   ],
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-  ],
+	extends: ["plugin:@typescript-eslint/recommended"]
 };
