@@ -25,6 +25,9 @@
       "eslint --fix"
     ]
   },
+	"files": [
+    "/dist"
+  ],
   "devDependencies": {
     "@types/jest": "^27.0.3",
     "@types/node": "^16.11.8",
