@@ -2,8 +2,7 @@
   "extends": "./tsconfig",
   "compilerOptions": {
     "target": "es5",
-    "outDir": "dist/module",
-    "module": "esnext",
-		"pretty": true
+    "outDir": "dist/umd",
+    "module": "umd"
   },
 }

@@ -8,12 +8,10 @@
       "dom",
     ],
     "esModuleInterop": true,
-    "sourceMap": true,
     "strict": true,
     "declaration": true,
     "outDir": "dist/main",
     "rootDir": "src",
-    // "jsx": "preserve",
     "types": [
       "@types/node",
       "@types/jest"

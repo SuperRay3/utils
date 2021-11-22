@@ -3,7 +3,9 @@
   "version": "0.0.3-beta.1",
   "main": "dist/main/index.js",
   "typings": "dist/main/index.d.ts",
-  "module": "dist/module/index.js",
+	"module": "dist/esm/index.js",
+  "unpkg": "dist/umd/index.js",
+  "browser": "dist/umd/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SuperRay3/utils.git"
@@ -11,9 +13,10 @@
   "author": "SuperRay3 <https://github.com/SuperRay3>",
   "license": "MIT",
   "scripts": {
-    "build": "npm run clean && npm run build:main && npm run build:module",
+    "build": "npm run clean && npm run build:main && npm run build:esm && npm run build:umd",
     "build:main": "tsc -p tsconfig.json",
-    "build:module": "tsc -p tsconfig.module.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
+		"build:umd": "rollup -c rollup.config.js",
     "release": "bump --commit --tag && npm run build && npm run lint && npm publish --access public",
     "test": "jest",
     "lint-staged": "lint-staged",
@@ -41,6 +44,8 @@
     "jest": "^27.3.1",
     "lint-staged": "^12.0.3",
     "rimraf": "^3.0.2",
+    "rollup": "^2.60.0",
+    "rollup-plugin-local-resolve": "^1.0.7",
     "ts-jest": "^27.0.7",
     "typescript": "^4.5.2",
     "version-bump-prompt": "^6.1.0"
