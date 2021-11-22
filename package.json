@@ -2,13 +2,13 @@
   "name": "@ray/utils",
   "version": "0.0.1",
   "main": "dist/main/index.js",
-	"typings": "dist/main/index.d.ts",
+  "typings": "dist/main/index.d.ts",
   "module": "dist/module/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SuperRay3/utils.git"
   },
-  "author": "SuperRay3<https://github.com/SuperRay3>",
+  "author": "SuperRay3 <https://github.com/SuperRay3>",
   "license": "MIT",
   "scripts": {
     "build": "npm run clean && npm run build:main && npm run build:module",
@@ -44,5 +44,11 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "description": "存放一些零散、未分类的工具函数",
+  "bugs": {
+    "url": "https://github.com/SuperRay3/utils/issues"
+  },
+  "homepage": "https://github.com/SuperRay3/utils#readme",
+  "dependencies": {}
 }
