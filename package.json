@@ -10,6 +10,7 @@
   "scripts": {
     "build": "node ./scripts/build",
     "release": "bump --commit --tag && npm run build && npm run lint && npm publish --access public",
+		"publish:ci": "node ./scripts/publish.js",
     "typings": "tsc --emitDeclarationOnly",
     "test": "jest",
     "lint-staged": "lint-staged",
