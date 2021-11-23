@@ -1,6 +1,6 @@
 {
   "name": "@rayuse/utils",
-  "version": "0.0.3-beta.2",
+  "version": "0.0.3-beta.3",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SuperRay3/utils.git"
@@ -9,8 +9,8 @@
   "license": "MIT",
   "scripts": {
     "build": "node ./scripts/build",
-    "release": "bump --commit --tag && npm run build && npm run lint && npm publish --access public",
-		"publish:ci": "node ./scripts/publish.js",
+    "release": "bump --commit --tag && npm run build && npm run lint && npm run publish:ci",
+    "publish:ci": "node ./scripts/publish.js",
     "typings": "tsc --emitDeclarationOnly",
     "test": "jest",
     "lint-staged": "lint-staged",
