@@ -1,26 +1,51 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const { uglify } = require('rollup-plugin-uglify')
-const resolve = require('rollup-plugin-local-resolve')
+import typescript2 from "rollup-plugin-typescript2";
+import { uglify } from 'rollup-plugin-uglify'
+import dts from 'rollup-plugin-dts'
 
-const createDefault = () => ({
-  input: 'dist/esm/index.js',
-  output: {
-    file: 'dist/umd/index.js',
-    format: 'umd',
-    name: 'utils',
-  },
-  plugins: [
-    resolve(),
-  ],
-})
+const packages = require('./scripts/packages')
+const configs = []
 
-const createMinified = () => {
-  const config = createDefault()
+for (const pkg of packages) {
+	configs.push({
+		input: `packages/${pkg}/index.ts`,
+		output: [
+			{
+        file: `dist/${pkg}/index.cjs.js`,
+        format: 'cjs',
+      },
+      {
+        file: `dist/${pkg}/index.esm.js`,
+        format: 'es',
+      },
+			{
+        file: `dist/${pkg}/index.umd.js`,
+        format: 'umd',
+				name: 'rayuse',
+      },
+			{
+        file: `dist/${pkg}/index.umd.min.js`,
+        format: 'umd',
+				name: 'rayuse',
+        plugins: [
+          uglify(),
+        ],
+      },
+		],
+		plugins: [
+			typescript2()
+		]
+	})
 
-  config.output.file = 'dist/umd/index.min.js'
-  config.plugins.push(uglify())
-
-  return config
+	configs.push({
+    input: `./typings/${pkg}/index.d.ts`,
+    output: {
+      file: `dist/${pkg}/index.d.ts`,
+      format: 'es',
+    },
+    plugins: [
+      dts(),
+    ],
+  })
 }
 
-module.exports = [createDefault(), createMinified()]
+export default configs

@@ -1,11 +1,6 @@
 {
   "name": "@rayuse/utils",
   "version": "0.0.3-beta.2",
-  "main": "dist/main/index.js",
-  "typings": "dist/main/index.d.ts",
-  "module": "dist/esm/index.js",
-  "unpkg": "dist/umd/index.min.js",
-  "browser": "dist/umd/index.min.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SuperRay3/utils.git"
@@ -13,20 +8,17 @@
   "author": "SuperRay3 <https://github.com/SuperRay3>",
   "license": "MIT",
   "scripts": {
-    "dev": "tsc -p tsconfig.esm.json --watch",
-    "build": "npm run clean && npm run build:main && npm run build:esm && npm run build:umd",
-    "build:main": "tsc -p tsconfig.json",
-    "build:esm": "tsc -p tsconfig.esm.json",
-    "build:umd": "rollup -c rollup.config.js",
+    "build": "node ./scripts/build",
     "release": "bump --commit --tag && npm run build && npm run lint && npm publish --access public",
+    "typings": "tsc --emitDeclarationOnly",
     "test": "jest",
     "lint-staged": "lint-staged",
-    "lint": "eslint src/**/*.{js,ts,vue}",
+    "lint": "eslint {pcakages,scripts}/**/*.{js,ts,vue}",
     "lint:fix": "npm run lint -- --fix",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist typings"
   },
   "lint-staged": {
-    "src/**/*.{js,ts,tsx,vue}": [
+    "{pcakages,scripts}/**/*.{js,ts,tsx,vue}": [
       "eslint --fix"
     ]
   },
@@ -38,15 +30,19 @@
     "@types/node": "^16.11.8",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
+    "consola": "^2.15.3",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.2.0",
     "eslint-plugin-jest": "^25.2.4",
+    "fs-extra": "^10.0.0",
     "husky": "^7.0.0",
     "jest": "^27.3.1",
     "lint-staged": "^12.0.3",
     "rimraf": "^3.0.2",
     "rollup": "^2.60.0",
+    "rollup-plugin-dts": "^4.0.1",
     "rollup-plugin-local-resolve": "^1.0.7",
+    "rollup-plugin-typescript2": "^0.31.0",
     "rollup-plugin-uglify": "^6.0.4",
     "ts-jest": "^27.0.7",
     "typescript": "^4.5.2",
