@@ -1,7 +1,7 @@
 ---
 home: true
 actionText: 所有函数
-actionLink: /functions
+actionLink: /utils/README
 
 altActionText: 快速开始
 altActionLink: /guide

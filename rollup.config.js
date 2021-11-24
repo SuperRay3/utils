@@ -21,12 +21,12 @@ for (const [pkg] of packages) {
 			{
         file: `dist/${pkg}/index.umd.js`,
         format: 'umd',
-				name: 'rayuse',
+				name: `rayuse${pkg}`,
       },
 			{
         file: `dist/${pkg}/index.umd.min.js`,
         format: 'umd',
-				name: 'rayuse',
+				name: `rayuse${pkg}`,
         plugins: [
           uglify(),
         ],

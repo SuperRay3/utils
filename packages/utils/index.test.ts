@@ -2,6 +2,8 @@ import { fixedRound, parseTime, getVal, sleep } from './index'
 
 test('parseTime', () => {
 	expect(parseTime(new Date(2021, 10, 19), '{y}/{m}/{d}')).toBe('2021/11/19')
+	expect(parseTime(1637743490387, '{y}/{m}/{d}')).toBe('2021/11/24')
+	expect(parseTime('2021-11-24', '{y}/{m}/{d}')).toBe('2021/11/24')
 })
 
 test('fixedRound', () => {
