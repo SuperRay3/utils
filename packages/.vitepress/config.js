@@ -4,6 +4,7 @@ const config = {
 	themeConfig: {
 		repo: 'SuperRay3/utils',
 		docsDir: 'packages',
+		docsBranch: 'main',
     editLinks: true,
     editLinkText: '在 Github 上编辑此页面',
     lastUpdated: '上次更新时间',
