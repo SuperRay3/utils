@@ -27,38 +27,35 @@ async function buildMetaFiles(packageVersion) {
 			await fs.copyFile(path.join(rootDir, metaFile), path.join(packageDist, metaFile))
 		}
 
-		if (pkg === 'utils')
-      await fs.copyFile(path.join(rootDir, 'README.md'), path.join(packageDist, 'README.md'))
-    else
-      await fs.copyFile(path.join(packageSrc, 'README.md'), path.join(packageDist, 'README.md'))
+		await fs.copyFile(path.join(packageSrc, 'README.md'), path.join(packageDist, 'README.md'))
 
-			const packageJSON = {
-				name: `@rayuse/${pkg}`,
-				description: options.description || rootPackageJSON.description,
-				version: packageVersion,
-				main: 'index.cjs.js',
-				typings: 'index.d.ts',
-				module: 'index.esm.js',
-				unpkg: 'index.umd.min.js',
-				jsdelivr: 'index.umd.min.js',
-				browser: 'index.esm.js',
-				repository: {
-					"type": "git",
-					"url": "git+https://github.com/SuperRay3/utils.git"
-				},
-				keywords: [
-					'utils',
-					...(options.keywords || []),
-				],
-				author: "SuperRay3 <https://github.com/SuperRay3>",
-				license: 'MIT',
-				bugs: {
-					url: "https://github.com/SuperRay3/utils/issues"
-				},
-				homepage: "https://github.com/SuperRay3/utils#readme",
-			}
+		const packageJSON = {
+			name: `@rayuse/${pkg}`,
+			description: options.description || rootPackageJSON.description,
+			version: packageVersion,
+			main: 'index.cjs.js',
+			typings: 'index.d.ts',
+			module: 'index.esm.js',
+			unpkg: 'index.umd.min.js',
+			jsdelivr: 'index.umd.min.js',
+			browser: 'index.esm.js',
+			repository: {
+				"type": "git",
+				"url": "git+https://github.com/SuperRay3/utils.git"
+			},
+			keywords: [
+				'utils',
+				...(options.keywords || []),
+			],
+			author: "SuperRay3 <https://github.com/SuperRay3>",
+			license: 'MIT',
+			bugs: {
+				url: "https://github.com/SuperRay3/utils/issues"
+			},
+			homepage: "https://github.com/SuperRay3/utils#readme",
+		}
 
-			await fs.writeFile(path.join(packageDist, 'package.json'), `${JSON.stringify(packageJSON, null, 2)}\n`)
+		await fs.writeFile(path.join(packageDist, 'package.json'), `${JSON.stringify(packageJSON, null, 2)}\n`)
 	}
 }
 
