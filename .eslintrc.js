@@ -19,6 +19,7 @@ module.exports = {
     'unicorn/filename-case': 'off',
     'no-new': 'off',
     'import/order': 'off',
+		"semi": [2, 'never']
   },
 	extends: ["plugin:@typescript-eslint/recommended"]
 };
