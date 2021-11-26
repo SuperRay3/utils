@@ -1,4 +1,4 @@
-import typescript2 from "rollup-plugin-typescript2";
+import typescript2 from "rollup-plugin-typescript2"
 import { uglify } from 'rollup-plugin-uglify'
 import dts from 'rollup-plugin-dts'
 import path from 'path'

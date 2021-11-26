@@ -66,6 +66,6 @@ export const intersection = <T = string | number | boolean | undefined | null>(a
  * @param arrB 数组 b
  * @returns 差集数组
  */
-export const diffrence = <T = string | number | boolean | undefined | null>(arrA: T[], arrB) => {
+export const diffrence = <T = string | number | boolean | undefined | null>(arrA: T[], arrB: T[]) => {
   return arrA.filter((v) => !arrB.includes(v))
 }
