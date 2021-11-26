@@ -1,5 +1,7 @@
 import typescript2 from "rollup-plugin-typescript2"
 import { uglify } from 'rollup-plugin-uglify'
+import { babel } from '@rollup/plugin-babel'
+import commonjs from '@rollup/plugin-commonjs'
 import dts from 'rollup-plugin-dts'
 import path from 'path'
 
@@ -16,7 +18,7 @@ for (const [pkg] of packages) {
       },
       {
         file: `dist/${pkg}/index.esm.js`,
-        format: 'es',
+        format: 'esm',
       },
 			{
         file: `dist/${pkg}/index.umd.js`,
@@ -33,14 +35,18 @@ for (const [pkg] of packages) {
       },
 		],
 		plugins: [
-			typescript2({
-        tsconfig: path.resolve(__dirname, 'tsconfig.rollup.json'),
-        tsconfigOverride: {
-          declaration: false,
-          declarationDir: null,
-          declarationMap: false,
-        },
-      })
+			// commonjs(),
+			babel({ babelHelpers: 'bundled' }),
+			typescript2(
+				{
+					tsconfig: path.resolve(__dirname, 'tsconfig.rollup.json'),
+					tsconfigOverride: {
+						declaration: false,
+						declarationDir: null,
+						declarationMap: false,
+					},
+      	}
+			)
 		]
 	})
 
