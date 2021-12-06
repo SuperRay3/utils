@@ -1,6 +1,6 @@
 {
   "name": "@rayuse/monorepo",
-  "version": "0.0.3-beta.4",
+  "version": "0.0.3-beta.5",
   "author": "SuperRay3 <https://github.com/SuperRay3>",
   "license": "MIT",
   "scripts": {
@@ -16,9 +16,9 @@
     "docs": "vitepress dev packages --port 9100 --host"
   },
   "lint-staged": {
-		"{packages,scripts}/**/*.{js,ts,tsx,vue}": [
-			"npm run lint:fix"
-		]
+    "{packages,scripts}/**/*.{js,ts,tsx,vue}": [
+      "npm run lint:fix"
+    ]
   },
   "files": [
     "/dist"
