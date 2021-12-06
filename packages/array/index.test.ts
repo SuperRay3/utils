@@ -8,7 +8,8 @@ import {
 	diffrence,
 	randomIntArrayInRange,
 	lastArrItem,
-	everyNth
+	everyNth,
+	chunkArr
 } from './index'
 
 
@@ -70,4 +71,10 @@ test('everyNth', () => {
 	expect(everyNth([1,2,3,4,5])).toEqual([2,4])
 	expect(everyNth([1,2,3,4,5], 3)).toEqual([3])
 	expect(everyNth([1,2,3,4,5], -1)).toEqual([])
+})
+
+test('chunkArr', () => {
+	expect(chunkArr([1,2,3,4,5], 1)).toEqual([[1],[2],[3],[4],[5]])
+	expect(chunkArr([1,2,3,4,5], 2)).toEqual([[1,2], [3,4], [5]])
+	expect(chunkArr([1,2,3,4,5], 3)).toEqual([[1,2,3], [4,5]])
 })

@@ -96,3 +96,38 @@ export const lastArrItem = (arr: unknown[]) => arr.slice(-1)[0]
 export const everyNth = (arr: unknown[], nth = 2) => {
   return arr.filter((v, i) => i % nth === nth - 1)
 }
+
+/**
+ * 按指定大小分隔数组
+ * @param arr 原数组
+ * @param size 块大小
+ * @returns 分割好的数组
+ */
+export const chunkArr = (arr: unknown[], size = 1) => {
+  return Array.from(
+    {
+      length: Math.ceil(arr.length / size),
+    },
+    (v, i) => arr.slice(i * size, i * size + size)
+  )
+}
+
+/**
+ * 数组乱序
+ * @param arr 数组
+ * @returns 乱序后的数组
+ */
+export const shuffle = (arr: unknown[]) => {
+  const array = arr
+  let index = array.length
+
+  while (index) {
+    index -= 1
+    const randomInedx = Math.floor(Math.random() * index)
+    const middleware = array[index]
+    array[index] = array[randomInedx]
+    array[randomInedx] = middleware
+  }
+
+  return array
+}
