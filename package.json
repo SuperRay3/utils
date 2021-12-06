@@ -18,7 +18,7 @@
   "lint-staged": {
     "{pcakages,scripts}/**/*.{js,ts,tsx,vue}": [
       "eslint --fix",
-			"test"
+			"jest --coverage"
     ]
   },
   "files": [
