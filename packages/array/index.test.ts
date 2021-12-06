@@ -1,4 +1,12 @@
-import { arithmeticSequence, countOccurrences, deepFlatten, flatten, indexOfAll, intersection } from './index'
+import {
+	arithmeticSequence,
+	countOccurrences,
+	deepFlatten,
+	flatten,
+	indexOfAll,
+	intersection,
+	randomIntArrayInRange
+} from './index'
 
 
 test('arithmeticSequence', () => {
@@ -35,4 +43,11 @@ test('indexOfAll', () => {
 
 test('intersection', () => {
 	expect(intersection([1,2,3,4,true], [2,5,true])).toEqual([2, true])
+})
+
+test('randomIntArrayInRange', () => {
+	const rst = randomIntArrayInRange(12, 35, 10)
+	expect(rst.length).toBe(10)
+	expect(Math.min(...rst)).toBeGreaterThanOrEqual(12)
+	expect(Math.max(...rst)).toBeLessThanOrEqual(35)
 })

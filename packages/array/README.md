@@ -62,6 +62,10 @@ indexOfAll([1, true, undefined, null, '1', 1, true, undefined, null, '1'], true)
 intersection([1,2,3,4,true], [2,5,true]) // [2, true]
 ```
 
-## 
+## randomIntArrayInRange
 
+获取指定范围、指定长度的随机数组
 
+```ts
+randomIntArrayInRange(12, 35, 10) // [ 34, 14, 27, 17, 30, 27, 20, 26, 21, 14 ]
+```

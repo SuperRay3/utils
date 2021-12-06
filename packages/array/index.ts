@@ -69,3 +69,14 @@ export const intersection = <T = string | number | boolean | undefined | null>(a
 export const diffrence = <T = string | number | boolean | undefined | null>(arrA: T[], arrB: T[]) => {
   return arrA.filter((v) => !arrB.includes(v))
 }
+
+/**
+ * 获取指定范围、指定长度的随机数组
+ * @param min 最小值
+ * @param max 最大值
+ * @param n 数组长度
+ * @returns 数组
+ */
+export const randomIntArrayInRange = (min = 0, max = 10, n = 10) =>
+  Array.from({ length: n }, () => Math.floor(Math.random() * (max - min + 1)) + min)
+
