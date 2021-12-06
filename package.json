@@ -16,7 +16,7 @@
     "docs": "vitepress dev packages --port 9100 --host"
   },
   "lint-staged": {
-    "{pcakages,scripts}/**/*.{js,ts,tsx,vue}": [
+    "{packages,scripts}/**/*.{js,ts,tsx,vue}": [
       "eslint --fix"
     ]
   },
