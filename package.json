@@ -17,7 +17,8 @@
   },
   "lint-staged": {
 		"{packages,scripts}/**/*.{js,ts,tsx,vue}": [
-			"npm run lint:fix"
+			"npm run lint:fix",
+			"git add"
 		]
   },
   "files": [
