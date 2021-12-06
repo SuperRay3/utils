@@ -80,4 +80,19 @@ export const diffrence = <T = string | number | boolean | undefined | null>(arrA
 export const randomIntArrayInRange = (min = 0, max = 10, n = 10) =>
   Array.from({ length: n }, () => Math.floor(Math.random() * (max - min + 1)) + min)
 
+/**
+ * 获取数组最后一个元素
+ * @param arr 数组
+ * @returns 数组最后一个元素
+ */
+export const lastArrItem = (arr: unknown[]) => arr.slice(-1)[0]
 
+/**
+ * 数组指定间隔的元素（nth）
+ * @param arr 数组
+ * @param nth 间隔
+ * @returns 结果数组
+ */
+export const everyNth = (arr: unknown[], nth = 2) => {
+  return arr.filter((v, i) => i % nth === nth - 1)
+}

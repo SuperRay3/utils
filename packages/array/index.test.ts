@@ -5,7 +5,10 @@ import {
 	flatten,
 	indexOfAll,
 	intersection,
-	randomIntArrayInRange
+	diffrence,
+	randomIntArrayInRange,
+	lastArrItem,
+	everyNth
 } from './index'
 
 
@@ -45,9 +48,26 @@ test('intersection', () => {
 	expect(intersection([1,2,3,4,true], [2,5,true])).toEqual([2, true])
 })
 
+test('diffrence', () => {
+	expect(diffrence([1,2,3], [3,2,1])).toEqual([])
+	expect(diffrence([2,5,2,5], [1])).toEqual([2,5,2,5])
+	expect(diffrence([2,5,2,5], [2])).toEqual([5,5])
+})
+
 test('randomIntArrayInRange', () => {
 	const rst = randomIntArrayInRange(12, 35, 10)
 	expect(rst.length).toBe(10)
 	expect(Math.min(...rst)).toBeGreaterThanOrEqual(12)
 	expect(Math.max(...rst)).toBeLessThanOrEqual(35)
+})
+
+test('lastArrItem', () => {
+	expect(lastArrItem([1,2,3,4,true])).toEqual(true)
+	expect(lastArrItem([1,2,3,4,{ aa: 1, bb: 2 }])).toEqual({ aa: 1, bb: 2 })
+})
+
+test('everyNth', () => {
+	expect(everyNth([1,2,3,4,5])).toEqual([2,4])
+	expect(everyNth([1,2,3,4,5], 3)).toEqual([3])
+	expect(everyNth([1,2,3,4,5], -1)).toEqual([])
 })
