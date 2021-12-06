@@ -1,9 +1,7 @@
 import typescript2 from "rollup-plugin-typescript2"
 import { uglify } from 'rollup-plugin-uglify'
 import { babel } from '@rollup/plugin-babel'
-import commonjs from '@rollup/plugin-commonjs'
 import dts from 'rollup-plugin-dts'
-import path from 'path'
 
 const packages = require('./scripts/packages')
 const configs = []
@@ -35,18 +33,20 @@ for (const [pkg] of packages) {
       },
 		],
 		plugins: [
-			// commonjs(),
-			babel({ babelHelpers: 'bundled' }),
 			typescript2(
 				{
-					tsconfig: path.resolve(__dirname, 'tsconfig.rollup.json'),
 					tsconfigOverride: {
-						declaration: false,
-						declarationDir: null,
-						declarationMap: false,
+						compilerOptions: {
+							declaration: false,
+						},
 					},
       	}
-			)
+			),
+			babel({
+				babelHelpers: 'bundled',
+				exclude: 'node_modules/**',
+      	extensions: ['.js', '.ts'], // 这句是关键，必须加上 .ts 不然不编译
+			}),
 		]
 	})
 
