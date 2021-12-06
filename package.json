@@ -9,7 +9,7 @@
     "publish:ci": "node ./scripts/publish.js",
     "typings": "tsc --emitDeclarationOnly",
     "test": "jest --coverage",
-    "lint-staged": "lint-staged",
+    "lint-staged": "lint-staged --allow-empty",
     "lint": "eslint {packages,scripts}/**/*.{js,ts,vue}",
     "lint:fix": "npm run lint -- --fix",
     "clean": "rimraf dist typings",
