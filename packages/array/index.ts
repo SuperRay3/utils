@@ -78,5 +78,6 @@ export const diffrence = <T = string | number | boolean | undefined | null>(arrA
  * @returns 数组
  */
 export const randomIntArrayInRange = (min = 0, max = 10, n = 10) =>
-  Array.from({ length: n }, () => Math.floor(Math.random() * (max - min + 1)) + min);
+  Array.from({ length: n }, () => Math.floor(Math.random() * (max - min + 1)) + min)
+	
 
