@@ -74,3 +74,33 @@ const a = { b: 1, c: 2, e: null }
 getVal(() => a.d, 0) // 0 因为不存在属性 c，正常读取会报错可能导致代码终止运行，此时可通过此函数避免报错并提供页面友好的缺省值
 getVal(() => a.e, '--') // '--'
 ```
+
+## formatCashType
+
+千分计数法
+
+```ts
+formatCashReg('1234567') // '1,234,567'
+formatCashReg('1234567.12') // '1,234,567.12'
+```
+
+## upDigit
+
+将金额转换为大写
+
+```ts
+upDigit(1234.12) // '壹仟贰佰叁拾肆元壹角壹分整'
+upDigit(1234) // '壹仟贰佰叁拾肆元整'
+```
+
+## isBlankObj
+
+判断是否为空对象
+
+```ts
+isBlankObj({}) // true
+isBlankObj(null) // false
+isBlankObj(undefined) // false
+isBlankObj('') // false
+isBlankObj([]) // true
+```
