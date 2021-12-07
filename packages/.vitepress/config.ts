@@ -9,8 +9,8 @@ var config = {
     editLinkText: '在 Github 上编辑此页面',
     lastUpdated: '上次更新时间',
 		nav: [
-      { text: '首页', link: '/' },
       { text: '快速开始', link: '/guide' },
+      { text: '首页', link: '/' },
     ],
 		sidebar: [
 			{
@@ -21,6 +21,13 @@ var config = {
 				text: '@rayuse/array',
 				link: '/array/README'
 			},
+			{
+				text: '@rayuse/composition',
+				link: '/composition/README',
+				children: [
+					{ text: 'useAMap', link: '/composition/useAMap/README' }
+				]
+			}
 		]
 	},
 	head: [

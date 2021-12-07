@@ -21,12 +21,20 @@ for (const [pkg] of packages) {
 			{
         file: `dist/${pkg}/index.umd.js`,
         format: 'umd',
+				globals: {
+					'vue-demi': 'VueDemi',
+					'@amap/amap-jsapi-loader': 'AMapLoader'
+				},
 				name: `rayuse${pkg}`,
       },
 			{
         file: `dist/${pkg}/index.umd.min.js`,
         format: 'umd',
 				name: `rayuse${pkg}`,
+				globals: {
+					'vue-demi': 'VueDemi',
+					'@amap/amap-jsapi-loader': 'AMapLoader'
+				},
         plugins: [
           uglify(),
         ],
@@ -47,7 +55,11 @@ for (const [pkg] of packages) {
 				exclude: 'node_modules/**',
       	extensions: ['.js', '.ts'], // 这句是关键，必须加上 .ts 不然不编译
 			}),
-		]
+		],
+		external: [
+      'vue-demi',
+			'@amap/amap-jsapi-loader'
+    ],
 	})
 
 	configs.push({
@@ -58,6 +70,10 @@ for (const [pkg] of packages) {
     },
     plugins: [
       dts(),
+    ],
+		external: [
+      'vue-demi',
+			'@amap/amap-jsapi-loader'
     ],
   })
 }

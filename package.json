@@ -61,5 +61,9 @@
     "url": "https://github.com/SuperRay3/utils/issues"
   },
   "homepage": "https://github.com/SuperRay3/utils#readme",
-  "dependencies": {}
+  "dependencies": {
+    "@amap/amap-jsapi-loader": "^1.0.1",
+    "@amap/amap-jsapi-types": "0.0.8",
+    "vue-demi": "^0.12.1"
+  }
 }
