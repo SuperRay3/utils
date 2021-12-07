@@ -22,7 +22,13 @@ var config = {
 				link: '/array/README'
 			},
 		]
-	}
+	},
+	head: [
+    ['link', { rel: 'icon', href: '/favicon.png', type: 'image/png' }],
+    ['meta', { name: 'author', content: 'SuperRay3' }],
+    ['meta', { property: 'og:title', content: 'rayuse' }],
+    ['meta', { property: 'og:description', content: '一些工具函数' }],
+  ],
 }
 
 module.exports = config
