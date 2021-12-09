@@ -1,9 +1,9 @@
 工具函数 monorepo
 
-## ⚡ Functions
+## Packages
 
-WIP...
+[@rayuse/utils](./packages/utils/README.md)
 
-## TODO
+[@rayuse/array](./packages/array/README.md)
 
-- babel 转换兼容代码
+[@rayuse/composition](./packages/composition/README.md)
