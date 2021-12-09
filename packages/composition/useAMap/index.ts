@@ -1,5 +1,5 @@
 
-import { ref, Ref } from 'vue-demi'
+import { ref, Ref, watch } from 'vue-demi'
 
 import AMapLoader from '@amap/amap-jsapi-loader'
 
@@ -23,7 +23,7 @@ interface allMapOpts extends AMapLoaderOptType {
 	immediate?: boolean
 }
 
-export function useAMap(dom: null | Ref<HTMLDivElement>, opt: allMapOpts = {
+export function useAMap(dom: Ref<null | HTMLDivElement>, opt: allMapOpts = {
 	key: '',
 	version: '2.0',
 	immediate: true
@@ -53,6 +53,10 @@ export function useAMap(dom: null | Ref<HTMLDivElement>, opt: allMapOpts = {
 		}
 	}).catch(() => {
 		console.error('amap-jsapi-loader 加载失败！')
+	})
+
+	watch(dom, (newVal) => {
+		console.log(newVal)
 	})
 
 	return {
