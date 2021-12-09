@@ -13,7 +13,8 @@
     "lint": "eslint {packages,scripts}/**/*.{js,ts,vue}",
     "lint:fix": "npm run lint -- --fix",
     "clean": "rimraf dist typings",
-    "docs": "vitepress dev packages --port 9100 --host"
+    "docs": "vitepress dev packages --port 9100 --host",
+    "docs:build": "vitepress build packages"
   },
   "lint-staged": {
     "{packages,scripts}/**/*.{js,ts,tsx,vue}": [
