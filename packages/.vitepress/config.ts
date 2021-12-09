@@ -1,6 +1,7 @@
 var config = {
 	title: 'rayuse',
 	description: '一些工具函数',
+	base: '/utils/',
 	themeConfig: {
 		repo: 'SuperRay3/utils',
 		docsDir: 'packages',
