@@ -26,7 +26,8 @@ var config = {
 				text: '@rayuse/composition',
 				link: '/composition/README',
 				children: [
-					{ text: 'useAMap', link: '/composition/useAMap/README' }
+					{ text: 'useAMap', link: '/composition/useAMap/README' },
+					{ text: 'useStore', link: '/composition/useStore/README' }
 				]
 			}
 		]

@@ -1,2 +1,2 @@
 export * from './useAMap'
-export * from './useTree'
+export * from './useStore'
